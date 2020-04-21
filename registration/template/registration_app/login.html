@@ -1,0 +1,28 @@
+{% extends 'registration_app/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    
+    <h2>User Login</h2>
+    <hr/>
+    <div class="container ">
+        <form action="{% url 'registration_app:user_login' %}" method="post" class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username" class="form-control" id="username" required>
+            <p></p>
+            <label for="password">Password</label>        
+            <input type="password" name="password" class="form-control" placeholder="password" id="password" required>
+            <p></p>
+            {% if form.errors %}
+                <p>username or password not correct</p>
+            {% endif %}
+            <input type="submit" class="btn btn-success" value="Login">    
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
