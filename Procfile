@@ -1,0 +1,1 @@
+web: gununicorn registration.wsgi --log-file -
