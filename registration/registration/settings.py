@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from registration_app import secret
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +22,12 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'template')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sjwbtjpkia6w$z4ve$5o8$$9gt(2mn=^jn202n#=z&63bvtz1='
+#SECRET_KEY = 'sjwbtjpkia6w$z4ve$5o8$$9gt(2mn=^jn202n#=z&63bvtz1='
+SECRET_KEY = secret.SECRET_KEY
+# with open('registration-repo/registration/s.txt') as f:
+#     SECRET_KEY = f.read().strip()
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
