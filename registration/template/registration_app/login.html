@@ -9,6 +9,7 @@
     <div class="container ">
         <form action="{% url 'registration_app:user_login' %}" method="post" class="form-group">
             {% csrf_token %}
+            {{form.errors}}
             {{ form.as_p }}
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="username" class="form-control" id="username" required>
@@ -16,8 +17,8 @@
             <label for="password">Password</label>        
             <input type="password" name="password" class="form-control" placeholder="password" id="password" required>
             <p></p>
-            {% if form.errors %}
-                <p>username or password not correct</p>
+            {% if errormsg %}
+                <p style="color: brown;">Invalid Username / Password</p>
             {% endif %}
             <input type="submit" class="btn btn-success" value="Login">    
         </form>

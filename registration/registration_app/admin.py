@@ -1,20 +1,20 @@
 from django.contrib import admin
-from registration_app.models import newUser
+from registration_app.models import useraccount
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
 
 admin.site.site_header = 'Demo Dashboard'
 
-class newUserAdmin(ImportExportModelAdmin):
-    list_display = ('fullname', 'usrname', 'email')
-    list_filter = ('fullname', 'usrname')
-    search_fields = ('fullname', 'usrname', 'email')
-    ordering = ('id', )
-   
+class useraccountAdmin(ImportExportModelAdmin):
+    # list_display = ('username', 'email')
+    # list_filter = ('username')
+    # search_fields = ('username', 'email')
+    # ordering = ('id', )
+    pass
 
 
 
-admin.site.register(newUser, newUserAdmin)
+admin.site.register(useraccount, useraccountAdmin)
 
 
 admin.site.unregister(Group)

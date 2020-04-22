@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
-from registration_app.models import newUser
 from django.urls import reverse
 from django.contrib import auth, messages
 
@@ -23,17 +22,16 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get("username")
         password = request.POST.get("password")
-        user = authenticate(request, usrname=username, password=password)
+        user = authenticate(request, username=username, password=password)
         
         if user:
-            login(request, user)
-            return HttpResponseRedirect('sucess')                       
-        else:            
-            return HttpResponse('Invalid Login Details')            
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('sucess')    
+            else:
+                return HttpResponse('Your Account is Not Active')                  
+        else:
+            msg = "Invalid Username / Password "            
+            return render(request, 'registration_app/login.html',{"errormsg": msg})            
     else:
         return render(request, 'registration_app/login.html',{})
-
-
-
-def loginpage(request):
-    return render(request, "registration_app/login.html")
