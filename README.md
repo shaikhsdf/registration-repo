@@ -1,4 +1,10 @@
 # registration-repo
+
+go to https://demoudaan.herokuapp.com/
+
+or
+
+
 python - django simple user registration by customizing djago admin site 
 
 Clone the repository
