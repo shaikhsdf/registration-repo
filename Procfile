@@ -1,1 +1,1 @@
-web: gununicorn registration.wsgi --log-file -
+web: gunicorn gettingstarted.wsgi --log-file -
