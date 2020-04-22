@@ -130,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICSTORAGE = "Whitenoise.storage.CompressedManifestStaticFilesStorage
+STATICSTORAGE = "Whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGIN_URL = '/registeation_app/user_login'
 
