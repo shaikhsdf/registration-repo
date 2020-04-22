@@ -33,7 +33,7 @@ SECRET_KEY = secret.SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = ['demoudaan.herokuapp.com',
-'http://shaikhsdf.pythonanywhere.com/',
+'shaikhsdf.pythonanywhere.com',
 '127.0.0.1',
 
 ]
