@@ -125,3 +125,6 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = '/registeation_app/user_login'
 
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
